@@ -8,3 +8,4 @@
 4. Dodajemy w src/test/resources/drivers plik chromedriver.exe
 5. Dodajemy pierwszy test sprawdzający konfigurację
 6. Dodajemy zależności związane z cucumber i gherkin
+7. Stworzenie pierwszego Feature (np. dla logowania)

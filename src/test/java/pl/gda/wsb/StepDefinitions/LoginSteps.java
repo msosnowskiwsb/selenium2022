@@ -24,10 +24,10 @@ public class LoginSteps {
         driver.navigate().to("https://opensource-demo.orangehrmlive.com/");
     }
 
-    @When("User enters username and password")
-    public void user_enters_username_and_password(){
-        loginPage.enterUsername("Admin");
-        loginPage.enterPassword("Admin");
+    @When("^User enters (.*) and (.*)$")
+    public void user_enters_username_and_password(String username, String password){
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
     }
 
     @And("Click on login button")
@@ -35,8 +35,8 @@ public class LoginSteps {
         loginPage.clickOnLoginButton();
     }
 
-    @Then("The validation message is displayed")
-    public void the_validation_message_is_displayed() {
-        Assert.assertEquals("Invalid credentials",loginPage.getValidationMessage());
+    @Then("^The validation (.*) is displayed$")
+    public void the_validation_message_is_displayed(String message) {
+        Assert.assertEquals(message,loginPage.getValidationMessage());
     }
 }

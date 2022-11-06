@@ -9,3 +9,5 @@
 5. Dodajemy pierwszy test sprawdzający konfigurację
 6. Dodajemy zależności związane z cucumber i gherkin
 7. Stworzenie pierwszego Feature (np. dla logowania)
+8. Dodanie TestRunner
+9. Dodanie definicji stepów związanych z feature

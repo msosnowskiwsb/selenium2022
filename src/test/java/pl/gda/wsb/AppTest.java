@@ -1,5 +1,4 @@
-package org.example;
-
+package pl.gda.wsb;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;

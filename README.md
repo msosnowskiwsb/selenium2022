@@ -11,3 +11,5 @@
 7. Stworzenie pierwszego Feature (np. dla logowania)
 8. Dodanie TestRunner
 9. Dodanie definicji stepów związanych z feature
+10. Dodanie Page Factory
+11. Dodanie Driver Factory

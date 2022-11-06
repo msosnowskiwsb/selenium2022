@@ -4,15 +4,18 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pl.gda.wsb.PageFactory.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
 public class LoginSteps {
 
     WebDriver driver = null;
+    LoginPage loginPage;
 
     @Given("Open login page")
     public void open_login_page(){
@@ -28,19 +31,19 @@ public class LoginSteps {
 
     @When("User enters username and password")
     public void user_enters_username_and_password(){
-        driver.findElement(By.name("username")).sendKeys("Admin");
-        driver.findElement(By.name("password")).sendKeys("admin321321");
+        loginPage = new LoginPage(driver);
+        loginPage.enterUsername("Admin");
+        loginPage.enterPassword("admin3216351");
     }
 
     @And("Click on login button")
     public void click_on_login_button(){
-        System.out.println("Click on login button");
-        driver.findElement(By.className("orangehrm-login-button")).click();
+        loginPage.clickOnLogin();
     }
 
     @Then("The validation message is displayed")
     public void the_validation_message_is_displayed() {
-        System.out.println("Click on login button");
-        String validation_message = driver.findElement(By.className("oxd-alert-content-text")).getText();
+        Assert.assertEquals("Invalid credentials",loginPage.getValidationMessage());
+        driver.close();
     }
 }

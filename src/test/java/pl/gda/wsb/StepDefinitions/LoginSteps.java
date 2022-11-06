@@ -40,7 +40,7 @@ public class LoginSteps {
         Assert.assertEquals("Invalid credentials",loginPage.getValidationMessage());
     }
 
-    @Then("The validation (.*) is displayed")
+    @Then("^The validation (.*) is displayed$")
     public void theValidationMessageIsDisplayed(String message) {
         Assert.assertEquals(message,loginPage.getValidationMessage());
     }
